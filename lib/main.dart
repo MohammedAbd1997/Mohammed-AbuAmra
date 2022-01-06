@@ -76,7 +76,7 @@ class MainFacebook extends StatelessWidget {
                           TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
                     ),
                     Spacer(),
-                    Text('See Archive >')
+                    Text('See Archive >',style: TextStyle(fontWeight: FontWeight.w500),)
                   ],
                 ),
               ),
