@@ -2,7 +2,6 @@ import 'package:facebook_ui/Data/dummyData.dart';
 import 'package:facebook_ui/ui/Post.dart';
 import 'package:facebook_ui/ui/Stories.dart';
 import 'package:flutter/material.dart';
-import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 
 void main() {
   runApp(MaterialApp(
@@ -15,45 +14,72 @@ class MainFacebook extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Colors.grey[300],
+        backgroundColor: Colors.white,
         appBar: AppBar(
-          actions: [
-            Container(
-              margin: const EdgeInsets.all(6.0),
-              decoration: BoxDecoration(
-                  color: Colors.grey[200], shape: BoxShape.circle),
-              child: IconButton(
-                onPressed: () {},
-                icon: Icon(Icons.search),
-                color: Colors.black,
-              ),
-            ), Container(
-              margin: const EdgeInsets.all(6.0),
-              decoration: BoxDecoration(
-                  color: Colors.grey[200], shape: BoxShape.circle),
-              child: IconButton(
-                onPressed: () {},
-                icon: Icon(Icons.messenger),
-                iconSize: 30,
-                color: Colors.black,
-              ),
-            )
-          ],
+          elevation: 0,
           backgroundColor: Colors.white,
           centerTitle: false,
-          title: Text(
-            "facebook",
-            style: TextStyle(
-                color: Colors.blue,
-                fontSize: 28,
-                letterSpacing: -1.2,
-                fontWeight: FontWeight.bold),
+          title: Row(
+            children: [
+              Container(
+                margin: const EdgeInsets.symmetric(vertical: 6.0),
+                decoration:
+                    BoxDecoration(color: Colors.white, shape: BoxShape.circle),
+                child: IconButton(
+                  onPressed: () {},
+                  icon: Icon(Icons.camera_alt_sharp),
+                  color: Colors.black,
+                ),
+              ),
+              Expanded(
+                child: TextField(
+                  decoration: InputDecoration(
+                      fillColor: Colors.grey[300],
+                      filled: true,
+                      contentPadding: EdgeInsets.symmetric(vertical: 2),
+                      hintText: 'Search',
+                      prefixIcon: Icon(
+                        Icons.search,
+                        color: Colors.grey[600],
+                      ),
+                      border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(40))),
+                ),
+              ),
+              Container(
+                margin: const EdgeInsets.only(left: 6),
+                decoration:
+                    BoxDecoration(color: Colors.white, shape: BoxShape.circle),
+                child: Container(
+                  height: 30,
+                  width: 30,
+                  child: Image.asset(
+                    'assets/icons/messenger.png',
+                  ),
+                ),
+              )
+            ],
           ),
         ),
         body: Container(
             child: SingleChildScrollView(
           child: Column(
             children: [
+              Container(
+                margin: EdgeInsets.symmetric(horizontal:10,vertical: 10 ),
+                color: Colors.white,
+                child: Row(
+                  children: [
+                    Text(
+                      'Stories',
+                      style:
+                          TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                    ),
+                    Spacer(),
+                    Text('See Archive >')
+                  ],
+                ),
+              ),
               Container(
                 color: Colors.white,
                 padding: EdgeInsets.only(bottom: 10),

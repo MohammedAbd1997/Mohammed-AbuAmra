@@ -26,11 +26,30 @@ class StoriesWidget extends StatelessWidget {
                 ),
               ),
               Container(
-                margin: EdgeInsets.only(top: 10,left: 10),
+                margin: EdgeInsets.only(top: 10, left: 10),
                 height: 36,
                 width: 36,
                 child: CircleAvatar(
                   backgroundImage: NetworkImage(storyModel.userModel.image),
+                ),
+              ),
+              Container(
+
+                height: 220,
+                width: 130,
+                child: Align(
+                  alignment: Alignment.bottomCenter,
+                  child: Container(
+
+                    margin: EdgeInsets.only(bottom: 10),
+                    child: Text(
+                      storyModel.userModel.name,
+                      style: TextStyle(
+                          fontSize: 16,
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold),
+                    ),
+                  ),
                 ),
               )
             ],
